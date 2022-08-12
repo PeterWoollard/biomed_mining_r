@@ -19,7 +19,7 @@ ggplot(data = ggplot2::mpg) + geom_point(mapping = aes(x = displ, y = hwy, color
 ggplot(data = ggplot2::mpg) + geom_point(mapping = aes(x = displ, y = hwy, color = cyl, shape = class, size = class))
 ggplot(data = ggplot2::mpg) + geom_point(mapping = aes(x = displ, y = hwy, color = displ < 5, stroke =5))
 
-#get a count of a category
+#get a count of a categoryggplot(data) + geom_point(mapping = aes(x = displ, y = hwy), position="jitter")
 data %>% count(class)
 
 #facet wraps:
@@ -43,3 +43,6 @@ ggplot(data, mapping = aes(x = displ, y = hwy, color = drv)) + geom_point() + ge
 
 ggplot(data, mapping = aes(x = displ, y = hwy, group = drv, colour = drv)) + geom_point() + geom_smooth(se = FALSE)
 ggplot(data, mapping = aes(x = displ, y = hwy)) + geom_point(aes(color=drv)) + geom_smooth(se = FALSE)
+
+#to plot all points
+ggplot(data) + geom_point(mapping = aes(x = displ, y = hwy), position="jitter")
